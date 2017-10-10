@@ -4,8 +4,6 @@ set -e
 #create deployment user and set password
 if [ ! -f docker_initialized ]; then
 	mkdir -p /var/www/html/$project_name
-	useradd -d /phpmyadmin -s /bin/false $pma_user
-	chown -R $pma_user: /phpmyadmin
 	useradd -d /var/www/html/$project_name -s /bin/bash $dev_user
 	chown -R $dev_user: /var/www/html/$project_name
 	useradd -d /phpmyadmin -s /bin/false $pma_user
