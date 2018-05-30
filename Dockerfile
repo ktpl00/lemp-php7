@@ -66,18 +66,18 @@ RUN apt-get update && apt-get install -y vim \
     && mv composer.phar /usr/local/bin/composer \
     && chmod +x /usr/local/bin/composer
 
-#ADD tools/docker/nginx/nginx.conf /etc/nginx/nginx.conf
-#ADD tools/docker/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
-#ADD tools/docker/nginx/conf.d/pma.conf /etc/nginx/conf.d/pma.conf
-#ADD tools/docker/php7fpm/cli/php.ini /etc/php/7.0/cli/php.ini
-#ADD tools/docker/php7fpm/fpm/php.ini /etc/php/7.0/fpm/php.ini
-#ADD tools/docker/php7fpm/fpm/php-fpm.conf /etc/php/7.0/fpm/php-fpm.conf
-#ADD tools/docker/php7fpm/fpm/pool.d/www.conf /etc/php/7.0/fpm/pool.d/www.conf
-#ADD tools/docker/php7fpm/fpm/pool.d/pma.conf /etc/php/7.0/fpm/pool.d/pma.conf
-#ADD tools/docker/postfix/main.cf /etc/postfix/main.cf
-#ADD tools/docker/varnish/default.vcl /etc/varnish/default.vcl
-#ADD tools/docker/varnish/varnish /etc/default/varnish
-#ADD tools/docker/redis/redis.conf /etc/redis/redis.conf
+ADD tools/docker/nginx/nginx.conf /etc/nginx/nginx.conf
+ADD tools/docker/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
+ADD tools/docker/nginx/conf.d/pma.conf /etc/nginx/conf.d/pma.conf
+ADD tools/docker/php7fpm/cli/php.ini /etc/php/7.0/cli/php.ini
+ADD tools/docker/php7fpm/fpm/php.ini /etc/php/7.0/fpm/php.ini
+ADD tools/docker/php7fpm/fpm/php-fpm.conf /etc/php/7.0/fpm/php-fpm.conf
+ADD tools/docker/php7fpm/fpm/pool.d/www.conf /etc/php/7.0/fpm/pool.d/www.conf
+ADD tools/docker/php7fpm/fpm/pool.d/pma.conf /etc/php/7.0/fpm/pool.d/pma.conf
+ADD tools/docker/postfix/main.cf /etc/postfix/main.cf
+ADD tools/docker/varnish/default.vcl /etc/varnish/default.vcl
+ADD tools/docker/varnish/varnish /etc/default/varnish
+ADD tools/docker/redis/redis.conf /etc/redis/redis.conf
 ADD tools/docker/supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 ADD tools/docker/supervisor/conf.d/apps.conf /etc/supervisor/conf.d/apps.conf
 ADD tools/docker/scripts/start.sh /start.sh
