@@ -2,6 +2,8 @@ from ubuntu:16.04
 
 MAINTAINER Nayan V. <nayanvanza91@gmail.com>
 
+ENV DEBIAN_FRONTEND noninteractive
+
 RUN apt-get update && apt-get install -y vim \
     && apt-get install -y software-properties-common \
     && apt-get install -y python-software-properties \
@@ -9,6 +11,7 @@ RUN apt-get update && apt-get install -y vim \
     && apt-get install -y build-essential \
     && apt-get install -y libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev \
     && apt-get install -y tcl8.5 \
+    && apt-get install -y wget \
     && apt-get install -y cron \
     && apt-get install -y curl \
     && apt-get install -y rsync \
@@ -38,11 +41,12 @@ RUN apt-get update && apt-get install -y vim \
     && apt-get -y update \
     && apt-get install -y nginx \
     && apt-get install -y apache2-utils \
+    && apt-get install -y debconf-utils \
     && cd /tmp/ \
     && wget https://repo.percona.com/apt/percona-release_0.1-4.$(lsb_release -sc)_all.deb \
     && dpkg -i percona-release_0.1-4.$(lsb_release -sc)_all.deb \
     && apt-get update \
-    && echo "percona-server-server-5.7 percona-server-server/root_password password secret" | debconf-set-selections \
+    && echo "ercona-server-server-5.7 percona-server-server/root_password password secret" | debconf-set-selections \
     && echo "percona-server-server-5.7 percona-server-server/root_password_again password secret" | debconf-set-selections \
     && apt-get install -y percona-server-server-5.7 percona-server-client-5.7 \
     && apt-get install -y varnish \
