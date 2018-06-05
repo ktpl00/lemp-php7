@@ -36,7 +36,6 @@ RUN apt-get update && apt-get install -y vim \
     && echo "deb-src http://nginx.org/packages/ubuntu/ xenial nginx" >> /etc/apt/sources.list \
     && apt-get -y update \
     && apt-get install -y nginx \
-    && usermod -a -G www-data nginx \
     && apt-get install -y apache2-utils \
     && cd /tmp/ \
     && wget https://repo.percona.com/apt/percona-release_0.1-4.$(lsb_release -sc)_all.deb \
