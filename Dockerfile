@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install -y vim \
     && apt-get install -y supervisor \
     && apt-get install -y psmisc \
     && apt-get install -y tree \
-    && apt-get install -y rsyslog \
+    && apt-get install -y rsyslog \ 
+    && apt-get install -y lsb \
     && echo "postfix postfix/mailname string root" | debconf-set-selections \
     && echo "postfix postfix/main_mailer_type string No configuration" | debconf-set-selections \
     && apt-get install -y postfix mailutils libsasl2-2 libsasl2-modules \
@@ -41,9 +42,9 @@ RUN apt-get update && apt-get install -y vim \
     && wget https://repo.percona.com/apt/percona-release_0.1-4.$(lsb_release -sc)_all.deb \
     && dpkg -i percona-release_0.1-4.$(lsb_release -sc)_all.deb \
     && apt-get update \
-    && echo "percona-server-server-5.6 percona-server-server/root_password password secret" | debconf-set-selections \
-    && echo "percona-server-server-5.6 percona-server-server/root_password_again password secret" | debconf-set-selections \
-    && apt-get install -y percona-server-server-5.6 percona-server-client-5.6 \
+    && echo "percona-server-server-5.7 percona-server-server/root_password password secret" | debconf-set-selections \
+    && echo "percona-server-server-5.7 percona-server-server/root_password_again password secret" | debconf-set-selections \
+    && apt-get install -y percona-server-server-5.7 percona-server-client-5.7 \
     && apt-get install -y varnish \
     && LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php \
     && apt-get update \
