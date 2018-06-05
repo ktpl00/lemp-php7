@@ -11,6 +11,7 @@ if [ ! -f docker_initialized ]; then
 	usermod -p $(echo $dev_password | openssl passwd -1 -stdin) $dev_user
 	usermod -p $(echo $root_password | openssl passwd -1 -stdin) root
     	usermod -a -G $pma_user,$dev_user nginx
+	service mysql restart
 	touch docker_initialized
 fi
 exec "$@"
