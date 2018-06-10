@@ -69,6 +69,14 @@ RUN apt-get update && apt-get install -y vim \
     && curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
     && chmod +x /usr/local/bin/composer
+#    && cd / \
+#    && wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb \
+#    && dpkg -i erlang-solutions_1.0_all.deb \
+#    && apt-get -y update \
+#    && echo 'deb http://www.rabbitmq.com/debian/ testing main' | sudo tee /etc/apt/sources.list.d/rabbitmq.list \
+#    && wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | sudo apt-key add - \
+#    && apt-get -y update \
+#    && apt-get install -y rabbitmq-server
 
 ADD tools/docker/nginx/nginx.conf /etc/nginx/nginx.conf
 ADD tools/docker/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
