@@ -5,4 +5,4 @@ Also enhance application performnace with most trusted cache servr as varnish an
 Application configured with built in Mail service with Postfix.
 
 # commnad to Launch Container.
-docker run -i -t -d --name web-server -e project_name=latest -e pma_user=pma -e dev_user=magento -e dev_password=magento123 -e root_password =root123 ktpl00/lemp-php7
+docker run -i -t -d --name web-server -e project_name=latest -e pma_user=pma -e dev_user=magento -e dev_password=magento123 -e root_password=root123 ktpl00/lemp-php7
